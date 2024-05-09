@@ -32,9 +32,9 @@ spring:
       error-handler:
       type: log
 
-  #jpa:
-   # hibernate:
-    #  ddl-auto: update
+  jpa:
+    hibernate:
+      ddl-auto: update
 
-    #database: mysql
-    #database-platform: org.hibernate.dialect.MySQL8Dialect
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
