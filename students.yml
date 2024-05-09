@@ -1,0 +1,40 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      deafaultZone: http://localhost:8761/eureka
+
+server:
+  port: 8890
+spring:
+  application:
+    name: students
+  #config:
+   # import: optional:configserver:http://localhost:8888
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/students
+    name: students
+    username: root
+    password:
+  kafka:
+   consumer:
+      bootstrap-servers: localhost:8895
+      group-id: myGroup
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      #value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        name: school-topic
+        spring.json.trusted.packages: '*'
+      error-handler:
+      type: log
+
+  #jpa:
+   # hibernate:
+    #  ddl-auto: update
+
+    #database: mysql
+    #database-platform: org.hibernate.dialect.MySQL8Dialect
