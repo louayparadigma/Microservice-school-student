@@ -20,7 +20,7 @@ spring:
       database: shcools
   kafka:
     producer:
-      bootstrap-servers: localhost:8895
+      bootstrap-servers: localhost:9092
       name: school-topic
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       #value-serializer: org.apache.kafka.common.serialization.StringSerializer
